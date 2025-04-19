@@ -103,7 +103,8 @@ section#featured-projects {
 }
 .btn:hover {
   background: var(--color-primary);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 /* Projects Grid */
@@ -162,7 +163,8 @@ form button {
 }
 form button:hover {
   background: var(--color-primary);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 /* Footer */
@@ -184,4 +186,27 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade-in sections on scroll */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hover effect for project items */
+.project-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
 }

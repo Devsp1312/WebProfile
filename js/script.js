@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.add('active');
     }
   });
-  AOS.init({ duration: 800, once: true });
+  // Removed AOS library; using custom IntersectionObserver for fade-in animations
 
   // Smooth scrolling for in-page anchors
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -19,4 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+  // Fade-in on scroll for sections with class 'fade-in-section'
+  const fadeInSections = document.querySelectorAll('.fade-in-section');
+  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  fadeInSections.forEach(section => observer.observe(section));
 });
