@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Dev Patel</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Basic styling for the status message, you can customize this in your CSS file */
+    #form-status {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .success {
+      color: green;
+    }
+    .error {
+      color: red;
+    }
+    .sending {
+      color: blue;
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation -->
@@ -30,13 +46,15 @@
         <input type="text" id="name" name="Name" required />
 
         <label for="email">Email</label>
-        <input type="email" id="email" name="Email" required />
+        <input type="email" id="email" name="Email" required /> <!-- Formspree uses 'email' or '_replyto' for the sender's email -->
 
         <label for="message">Message</label>
         <textarea id="message" name="Message" rows="5" required></textarea>
 
         <button type="submit">Send</button>
       </form>
+      <!-- This div will display status messages (e.g., "Sending...", "Message sent!", "Error.") -->
+      <div id="form-status"></div>
 
       <div class="direct-contact">
         <h2>Direct Contact</h2>
@@ -50,32 +68,73 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Dev Patel. All rights reserved.</p>
+    <p>© 2025 Dev Patel. All rights reserved.</p>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js"></script> <!-- Assuming this has other general scripts for your site -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
         const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('form-status');
 
-        contactForm.addEventListener('submit', function (event) {
-            event.preventDefault();
+        contactForm.addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent the default form submission behavior
 
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
 
-            // Simulate sending data to a server
-            console.log('Name:', name);
-            console.log('Email:', email);
-            console.log('Message:', message);
+            const formData = {
+                Name: name, // Formspree will use the 'name' attribute of your input fields
+                Email: email, // Or you can use '_replyto': email if you want Formspree to set the reply-to header
+                Message: message,
+                // _subject: `New Contact Form Submission from ${name}`, // Optional: Add a subject line
+            };
 
-            alert('Message sent successfully!');
+            // Your Formspree endpoint URL
+            const endpointURL = 'https://formspree.io/f/xjkwrypn'; 
 
-            // Clear the form
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('message').value = '';
+            formStatus.textContent = 'Sending...';
+            formStatus.className = 'sending'; // Use class for styling
+
+            try {
+                const response = await fetch(endpointURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json' // Important for Formspree AJAX submissions
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (response.ok) {
+                    formStatus.textContent = 'Message sent successfully!';
+                    formStatus.className = 'success';
+                    contactForm.reset(); // Clear the form fields
+                } else {
+                    let errorMessage = 'Oops! There was a problem submitting your form.';
+                    try {
+                        const errorData = await response.json();
+                        if (errorData && errorData.errors && Array.isArray(errorData.errors) && errorData.errors.length > 0) {
+                           // Formspree usually provides errors in an 'errors' array
+                           errorMessage = errorData.errors.map(err => err.message || String(err.field || err)).join(', ');
+                        } else if (errorData && errorData.error) {
+                           errorMessage = errorData.error;
+                        } else {
+                           errorMessage = `Server error: ${response.status} - ${response.statusText}`;
+                        }
+                    } catch (e) {
+                        errorMessage = `Server error: ${response.status} - ${response.statusText}. Could not parse error details.`;
+                        console.error('Could not parse error response as JSON:', await response.text());
+                    }
+                    formStatus.textContent = errorMessage;
+                    formStatus.className = 'error';
+                }
+            } catch (error) {
+                formStatus.textContent = 'Failed to send message. Check your network connection or try again.';
+                formStatus.className = 'error';
+                console.error('Fetch error:', error);
+            }
         });
     });
   </script>
