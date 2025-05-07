@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   // Fade-in on scroll for sections with class 'fade-in-section'
   const fadeInSections = document.querySelectorAll('.fade-in-section');
-  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+  const observerOptions = { threshold: 0.05, rootMargin: '0px 0px -50px 0px' };
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
