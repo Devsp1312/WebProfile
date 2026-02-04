@@ -20,6 +20,7 @@
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#resume" class="nav-link">Resume</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </div>
@@ -27,12 +28,17 @@
 
   <!-- Hero Section -->
   <section id="hero" class="hero">
-    <div class="container">
-      <h1 class="hero-title">Hi, I'm Dev Patel</h1>
-      <p class="hero-subtitle">Electrical & Computer Engineering Student focusing on technical solutions and innovative problem-solving</p>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="status-dot"></span>
+        <span>Open to opportunities</span>
+      </div>
+      <h1 class="hero-title">Dev Patel</h1>
+      <p class="hero-role">Electrical & Computer Engineer</p>
+      <p class="hero-subtitle">Building reliable systems with clean architecture and real-world impact</p>
       <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="#contact" class="btn btn-secondary">Contact</a>
+        <a href="#projects" class="btn btn-primary">View Work</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
       </div>
     </div>
   </section>
@@ -41,25 +47,54 @@
   <section id="about" class="section fade-in-section">
     <div class="container">
       <h2 class="section-title parallax-scroll">About</h2>
-      <p class="about-text">
-        I'm pursuing a B.S. in Electrical and Computer Engineering (minor in Human Resource Management) 
-        at Rutgers University, expected graduation May 2026. I'm passionate about leveraging technology 
-        to solve real-world problems and creating innovative solutions.
-      </p>
-      <ul class="highlights stagger-animation">
-        <li>
-          <span class="highlight-icon">⚡</span>
-          <strong>Technical Expertise:</strong> Proficient in circuit design, embedded systems, and software development
-        </li>
-        <li>
-          <span class="highlight-icon">💼</span>
-          <strong>Professional Experience:</strong> Technical Consultant & Help Desk Technician
-        </li>
-        <li>
-          <span class="highlight-icon">🎯</span>
-          <strong>Focus Areas:</strong> IoT, automation, and user-centric technology solutions
-        </li>
-      </ul>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-kicker">Electrical & Computer Engineering</div>
+          <h3 class="about-title">Building reliable systems with a human-first mindset.</h3>
+          <p class="about-text">
+            I’m an Electrical and Computer Engineering student at Rutgers University (GPA: 3.53/4.0),
+            graduating May 2026 with a minor in Human Resource Management. I focus on practical engineering,
+            clean architecture, and real-world reliability—whether that’s troubleshooting hardware or shipping software.
+          </p>
+          <div class="about-badges">
+            <span>Rutgers University</span>
+            <span>May 2026</span>
+            <span>GPA 3.53</span>
+            <span>HRM Minor</span>
+          </div>
+        </div>
+
+        <div class="about-panels">
+          <div class="about-panel">
+            <div class="panel-icon">💻</div>
+            <div>
+              <h4>Programming</h4>
+              <p>Python, C/C++, JavaScript, MATLAB, Verilog, VHDL, HTML/CSS, SQL</p>
+            </div>
+          </div>
+          <div class="about-panel">
+            <div class="panel-icon">🔧</div>
+            <div>
+              <h4>Engineering</h4>
+              <p>Circuit Design, PCB Layout, FPGA, Embedded Systems, IoT Development</p>
+            </div>
+          </div>
+          <div class="about-panel">
+            <div class="panel-icon">🛠️</div>
+            <div>
+              <h4>Tools</h4>
+              <p>Git, Docker, Linux/Unix, Arduino, Raspberry Pi, SPICE, Cadence, AutoCAD</p>
+            </div>
+          </div>
+          <div class="about-panel">
+            <div class="panel-icon">🤝</div>
+            <div>
+              <h4>Experience</h4>
+              <p>Technical Consultant, SQL Assignment Grader, Help Desk Technician</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -67,128 +102,172 @@
   <section id="projects" class="section fade-in-section">
     <div class="container">
       <h2 class="section-title parallax-scroll">Projects</h2>
-      <div class="projects-grid stagger-animation">
+      <p class="section-subtitle">Hover to explore my work</p>
+      
+      <div class="projects-showcase">
         
-        <!-- Project Card 1 -->
-        <article class="project-card">
-          <h3 class="project-title">Traffic Signal Logic Circuit</h3>
-          <p class="project-description">
-            Designed a six-light traffic signal logic circuit with environmental sensors 
-            for responsive activation, optimized for LED testing and power efficiency.
-          </p>
-          <div class="tech-tags">
-            <span class="tag">Circuit Design</span>
-            <span class="tag">Logic Gates</span>
-            <span class="tag">Sensors</span>
+        <!-- Project 1 - Featured -->
+        <article class="showcase-card featured" data-project="1">
+          <div class="card-glow"></div>
+          <div class="card-border"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <span class="project-number">01</span>
+              <div class="project-status">
+                <span class="status-dot"></span>
+                Featured
+              </div>
+            </div>
+            <h3 class="showcase-title">Traffic Signal Logic Circuit</h3>
+            <p class="showcase-description">
+              Designed a six-light traffic signal logic circuit with environmental sensors for responsive activation. Optimized LED testing and power efficiency.
+            </p>
+            <div class="showcase-tech">
+              <span>Circuit Design</span>
+              <span>Logic Gates</span>
+              <span>LED Testing</span>
+              <span>Sensors</span>
+            </div>
+            <div class="showcase-actions">
+              <a href="https://github.com/Devsp1312" target="_blank" class="action-btn primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                View Code
+              </a>
+              <a href="#" class="action-btn secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>
+                Demo
+              </a>
+            </div>
           </div>
-          <div class="project-links">
-            <a href="https://github.com/Devsp1312" target="_blank" class="project-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-              </svg>
-              GitHub
-            </a>
-            <a href="#" class="project-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-              Live Demo
-            </a>
-          </div>
+          <div class="card-shine"></div>
         </article>
 
-        <!-- Project Card 2 -->
-        <article class="project-card">
-          <h3 class="project-title">Mini PC AI & NAS Setup</h3>
-          <p class="project-description">
-            Configured Ubuntu-based mini-PC as a NAS (Samba) and deployed a GPT-2 AI chatbot 
-            via FastAPI with a React frontend for seamless access.
-          </p>
-          <div class="tech-tags">
-            <span class="tag">Ubuntu</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">React</span>
-            <span class="tag">AI/ML</span>
+        <!-- Project 2 -->
+        <article class="showcase-card" data-project="2">
+          <div class="card-glow"></div>
+          <div class="card-border"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <span class="project-number">02</span>
+              <div class="project-status ai">
+                <span class="status-dot"></span>
+                AI/ML
+              </div>
+            </div>
+            <h3 class="showcase-title">Mini-PC AI Chatbot & NAS</h3>
+            <p class="showcase-description">
+              Configured Ubuntu-based mini-PC as NAS with Samba. Deployed GPT-2 AI chatbot with FastAPI backend and React frontend.
+            </p>
+            <div class="showcase-tech">
+              <span>Ubuntu</span>
+              <span>FastAPI</span>
+              <span>React</span>
+              <span>GPT-2</span>
+            </div>
+            <div class="showcase-actions">
+              <a href="https://github.com/Devsp1312" target="_blank" class="action-btn primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                View Code
+              </a>
+              <a href="#" class="action-btn secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>
+                Demo
+              </a>
+            </div>
           </div>
-          <div class="project-links">
-            <a href="https://github.com/Devsp1312" target="_blank" class="project-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-              </svg>
-              GitHub
-            </a>
-            <a href="#" class="project-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-              Live Demo
-            </a>
-          </div>
+          <div class="card-shine"></div>
         </article>
 
-        <!-- Project Card 3 -->
-        <article class="project-card">
-          <h3 class="project-title">Smart Home Automation System</h3>
-          <p class="project-description">
-            Developed an IoT-based home automation system with voice control, 
-            temperature monitoring, and energy optimization features.
-          </p>
-          <div class="tech-tags">
-            <span class="tag">IoT</span>
-            <span class="tag">Arduino</span>
-            <span class="tag">Python</span>
-            <span class="tag">MQTT</span>
+        <!-- Project 3 -->
+        <article class="showcase-card" data-project="3">
+          <div class="card-glow"></div>
+          <div class="card-border"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <span class="project-number">03</span>
+              <div class="project-status iot">
+                <span class="status-dot"></span>
+                IoT
+              </div>
+            </div>
+            <h3 class="showcase-title">IoT Voice-Controlled Assistant</h3>
+            <p class="showcase-description">
+              Voice-controlled IoT assistant using Raspberry Pi and Arduino. Integrated smart home devices with Google Assistant.
+            </p>
+            <div class="showcase-tech">
+              <span>Raspberry Pi</span>
+              <span>Arduino</span>
+              <span>Google Assistant</span>
+              <span>Python</span>
+            </div>
+            <div class="showcase-actions">
+              <a href="https://github.com/Devsp1312" target="_blank" class="action-btn primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                View Code
+              </a>
+              <a href="#" class="action-btn secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>
+                Demo
+              </a>
+            </div>
           </div>
-          <div class="project-links">
-            <a href="https://github.com/Devsp1312" target="_blank" class="project-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-              </svg>
-              GitHub
-            </a>
-            <a href="#" class="project-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-              Live Demo
-            </a>
-          </div>
+          <div class="card-shine"></div>
         </article>
 
-        <!-- Project Card 4 -->
-        <article class="project-card">
-          <h3 class="project-title">Portfolio Website</h3>
-          <p class="project-description">
-            Responsive personal portfolio website with smooth animations, 
-            modern design, and optimized performance.
-          </p>
-          <div class="tech-tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
+        <!-- Project 4 -->
+        <article class="showcase-card" data-project="4">
+          <div class="card-glow"></div>
+          <div class="card-border"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <span class="project-number">04</span>
+              <div class="project-status hardware">
+                <span class="status-dot"></span>
+                Hardware
+              </div>
+            </div>
+            <h3 class="showcase-title">Wireless Energy Monitoring</h3>
+            <p class="showcase-description">
+              Wireless energy monitoring system using ESP8266 and current sensors. Real-time data visualization via cloud platform.
+            </p>
+            <div class="showcase-tech">
+              <span>ESP8266</span>
+              <span>IoT</span>
+              <span>Sensors</span>
+              <span>Cloud</span>
+            </div>
+            <div class="showcase-actions">
+              <a href="https://github.com/Devsp1312" target="_blank" class="action-btn primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                View Code
+              </a>
+              <a href="#" class="action-btn secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>
+                Demo
+              </a>
+            </div>
           </div>
-          <div class="project-links">
-            <a href="https://github.com/Devsp1312" target="_blank" class="project-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-              </svg>
-              GitHub
-            </a>
-            <a href="#" class="project-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-              Live Demo
-            </a>
-          </div>
+          <div class="card-shine"></div>
         </article>
 
       </div>
@@ -205,41 +284,86 @@
         <article class="work-item">
           <div class="work-header">
             <h3 class="work-role">Technical Consultant</h3>
-            <span class="work-date">Sep 2024 – Present</span>
+            <span class="work-date">Mar 2025 – Present</span>
           </div>
-          <p class="work-company">Rutgers University</p>
+          <p class="work-company">Freelance</p>
           <ul class="work-description">
-            <li>Provide technical support to students, professors, and clients for home technology setup and troubleshooting</li>
-            <li>Diagnose and resolve hardware and software issues, improving client satisfaction and system performance</li>
+            <li>Provided on-site and remote troubleshooting for students, professors, and private clients, resolving issues with printers, Wi-Fi routers, home cameras, and entertainment systems</li>
+            <li>Recommended and configured technology solutions tailored to individual needs, improving client satisfaction and enabling smooth adoption for non-technical users</li>
+            <li>Strengthened communication and problem-solving skills by translating complex technical concepts into user-friendly explanations</li>
           </ul>
         </article>
 
         <!-- Work Item 2 -->
         <article class="work-item">
           <div class="work-header">
-            <h3 class="work-role">Help Desk Technician</h3>
-            <span class="work-date">Jan 2024 – Present</span>
+            <h3 class="work-role">SQL Assignment Grader</h3>
+            <span class="work-date">Fall 2025 – Present</span>
           </div>
-          <p class="work-company">Rutgers University</p>
+          <p class="work-company">Rutgers University – New Brunswick, NJ</p>
           <ul class="work-description">
-            <li>Support Bloomberg terminals and campus computer systems, ensuring optimal operation and minimal downtime</li>
-            <li>Respond to technical inquiries and provide solutions for diverse user needs across the campus</li>
+            <li>Evaluated and graded MySQL assignments for 04:189:101:03 – Introduction to Communication & Information, covering multi-table joins, aggregation functions, and database schema design</li>
+            <li>Verified correctness of student queries against an answer key and standardized grading rubric across 100+ submissions</li>
+            <li>Delivered targeted feedback to identify logical errors, inefficiencies, and best practices in SQL query construction</li>
           </ul>
         </article>
 
         <!-- Work Item 3 -->
         <article class="work-item">
           <div class="work-header">
-            <h3 class="work-role">Freelance Web Developer</h3>
-            <span class="work-date">Jun 2023 – Aug 2024</span>
+            <h3 class="work-role">Help Desk Technician</h3>
+            <span class="work-date">Sep 2021 – Present</span>
           </div>
-          <p class="work-company">Self-Employed</p>
+          <p class="work-company">Rutgers Business School – New Brunswick, NJ</p>
           <ul class="work-description">
-            <li>Designed and developed responsive websites for local businesses and clients</li>
-            <li>Implemented modern web technologies to create user-friendly and performant applications</li>
+            <li>Managed and maintained 100+ Bloomberg terminals for over 1,000 students, ensuring seamless hardware/software functionality and minimizing downtime</li>
+            <li>Collaborated with IT managers to deploy and configure campus computers used by 400+ professors and staff, streamlining academic operations</li>
+            <li>Designed and deployed a lightweight internal website that allowed staff to upload service tag images and automatically generated an Excel list, reducing manual entry time by 70%</li>
+            <li>Authored a comprehensive user guide for Virtual Labs, PowerBI, and Dropbox, increasing efficiency and self-service adoption among faculty and students</li>
           </ul>
         </article>
 
+        <!-- Work Item 4 -->
+        <article class="work-item">
+          <div class="work-header">
+            <h3 class="work-role">Fusion Sales Athlete</h3>
+            <span class="work-date">May 2024 – Sep 2024</span>
+          </div>
+          <p class="work-company">Sunrun – New Brunswick, NJ</p>
+          <ul class="work-description">
+            <li>Generated and converted leads through effective door-to-door canvassing, contributing to a 2% customer base increase by leveraging in-depth knowledge of solar energy systems</li>
+            <li>Expanded outreach by networking with potential clients and managing a personal schedule and sales territory to maximize productivity</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="section fade-in-section">
+    <div class="container">
+      <h2 class="section-title parallax-scroll">Resume</h2>
+      <p class="contact-intro">View my complete professional experience and qualifications</p>
+      
+      <div class="resume-actions">
+        <a href="Resume__Dev_IT.pdf" download class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Download Resume</span>
+        </a>
+      </div>
+
+      <div id="resumeViewer" class="resume-viewer">
+        <div class="resume-viewer-header">
+          <h3>Resume Preview</h3>
+        </div>
+        <div class="resume-viewer-content">
+          <iframe id="resumeFrame" src="Resume__Dev_IT.pdf" frameborder="0" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </section>
