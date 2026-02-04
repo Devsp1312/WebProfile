@@ -20,6 +20,12 @@ const EMAILJS_CONFIG = {
 
 document.addEventListener('DOMContentLoaded', () => {
   
+  // ==========================================
+  // PAGE LOAD OPTIMIZATION
+  // ==========================================
+  // Ensure smooth initial render
+  document.body.style.visibility = 'visible';
+  
   // Initialize EmailJS
   if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
     emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
@@ -120,16 +126,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // FADE-IN ANIMATIONS ON SCROLL
   // ==========================================
   const fadeInSections = document.querySelectorAll('.fade-in-section');
+  const staggerSections = document.querySelectorAll('.stagger-animation');
   
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -80px 0px'
   };
   
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
+        // Don't unobserve to allow re-animation if user scrolls back up (optional)
         observer.unobserve(entry.target);
       }
     });
@@ -137,6 +145,89 @@ document.addEventListener('DOMContentLoaded', () => {
   
   fadeInSections.forEach(section => {
     observer.observe(section);
+  });
+  
+  staggerSections.forEach(section => {
+    observer.observe(section);
+  });
+
+  // ==========================================
+  // PARALLAX SCROLL EFFECT (Apple-style)
+  // ==========================================
+  const heroSection = document.querySelector('.hero');
+  const parallaxElements = document.querySelectorAll('.parallax-scroll');
+  
+  function handleParallaxScroll() {
+    const scrolled = window.pageYOffset;
+    
+    // Parallax effect on hero
+    if (heroSection) {
+      const heroContent = heroSection.querySelector('.container');
+      if (heroContent && scrolled < window.innerHeight) {
+        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+        heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.8;
+      }
+    }
+    
+    // Parallax on specific elements
+    parallaxElements.forEach(element => {
+      const rect = element.getBoundingClientRect();
+      const scrollPercent = (window.innerHeight - rect.top) / window.innerHeight;
+      
+      if (scrollPercent > 0 && scrollPercent < 1) {
+        element.style.transform = `translateY(${scrollPercent * -20}px)`;
+      }
+    });
+  }
+  
+  // Throttle parallax for performance
+  let ticking = false;
+  function requestParallaxUpdate() {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        handleParallaxScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  
+  window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+  
+  // ==========================================
+  // MOUSE MOVE EFFECT ON CARDS (Subtle 3D tilt)
+  // ==========================================
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  projectCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = (y - centerY) / 20;
+      const rotateY = (centerX - x) / 20;
+      
+      card.style.transform = `translateY(-12px) scale(1.02) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+  
+  // ==========================================
+  // SMOOTH CURSOR ANIMATIONS FOR LINKS
+  // ==========================================
+  const animatedLinks = document.querySelectorAll('a, button');
+  
+  animatedLinks.forEach(link => {
+    link.addEventListener('mouseenter', function() {
+      this.style.transition = 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    });
   });
 
   // ==========================================
@@ -276,10 +367,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
   function handleNavScroll() {
     if (window.scrollY > 50) {
-      nav.style.backgroundColor = 'rgba(250, 250, 250, 0.95)';
-      nav.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+      nav.style.backgroundColor = 'rgba(12, 12, 12, 0.95)';
+      nav.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.5)';
     } else {
-      nav.style.backgroundColor = 'rgba(250, 250, 250, 0.8)';
+      nav.style.backgroundColor = 'rgba(10, 10, 10, 0.7)';
       nav.style.boxShadow = 'none';
     }
   }
@@ -313,5 +404,17 @@ document.addEventListener('DOMContentLoaded', () => {
   
   addPreloadHints();
   
-  console.log('✓ Portfolio loaded successfully!');
+  // ==========================================
+  // PERFORMANCE: Debounce resize events
+  // ==========================================
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      // Recalculate positions after resize
+      highlightActiveNav();
+    }, 250);
+  });
+  
+  console.log('✓ Portfolio loaded with Apple-style animations!');
 });
