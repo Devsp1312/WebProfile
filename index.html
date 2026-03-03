@@ -4,6 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dev Patel | Portfolio</title>
+
+  <!-- SEO & Meta -->
+  <meta name="description" content="Dev Patel is an Electrical and Computer Engineering student at Rutgers University building hardware, full-stack, and AI-integrated systems." />
+  <meta name="author" content="Dev Patel" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dev Patel | Portfolio" />
+  <meta property="og:description" content="Electrical & Computer Engineer building reliable systems with clean architecture and real-world impact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://devpatel.dev" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -36,6 +50,10 @@
       <h1 class="hero-title">Dev Patel</h1>
       <p class="hero-role">Electrical & Computer Engineer</p>
       <p class="hero-subtitle">Building reliable systems with clean architecture and real-world impact</p>
+      <div class="hero-badge" style="margin-top: 0.75rem;">
+        <span class="status-dot" style="background: #f59e0b;"></span>
+        <span>Currently building: Serendipity</span>
+      </div>
       <div class="hero-buttons">
         <a href="#projects" class="btn btn-primary">View Work</a>
         <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -52,14 +70,11 @@
           <div class="about-kicker">Electrical & Computer Engineering</div>
           <h3 class="about-title">Building reliable systems with a human-first mindset.</h3>
           <p class="about-text">
-            I’m an Electrical and Computer Engineering student at Rutgers University (GPA: 3.53/4.0),
-            graduating May 2026 with a minor in Human Resource Management. I focus on practical engineering,
-            clean architecture, and real-world reliability—whether that’s troubleshooting hardware or shipping software.
+            Dev Patel is an Electrical and Computer Engineering student at Rutgers University with a strong interest in building practical, scalable technology solutions. His work spans hardware and software, from developing Arduino-based systems and backend applications in Node.js to exploring AI and machine learning integrations. Dev enjoys turning ideas into working systems—whether that’s creating a smart inventory platform with chatbot support, experimenting with server and NAS setups on repurposed hardware, or offering hands-on tech consulting services. With a minor in Human Resource Management, he brings both technical depth and leadership awareness to his projects, focusing on clarity, usability, and real-world impact.
           </p>
           <div class="about-badges">
             <span>Rutgers University</span>
             <span>May 2026</span>
-            <span>GPA 3.53</span>
             <span>HRM Minor</span>
           </div>
         </div>
@@ -171,7 +186,7 @@
       <p class="section-subtitle">Hover to explore my work</p>
       
       <div class="projects-showcase">
-        
+
         <!-- Project 1 - Featured -->
         <article class="showcase-card featured" data-project="1">
           <div class="card-glow"></div>
@@ -184,30 +199,16 @@
                 Featured
               </div>
             </div>
-            <h3 class="showcase-title">Traffic Signal Logic Circuit</h3>
+            <h3 class="showcase-title">Serendipity</h3>
             <p class="showcase-description">
-              Designed a six-light traffic signal logic circuit with environmental sensors for responsive activation. Optimized LED testing and power efficiency.
+              A privacy-preserving wearable badge with on-device audio processing using Distil-Whisper and Wav2Vec2. Cloud backend for event recommendations and a companion mobile app. PCB designed in KiCad for ESP32-S3 with GPS, accelerometer, e-ink display, LiPo battery management, and USB-C.
             </p>
             <div class="showcase-tech">
-              <span>Circuit Design</span>
-              <span>Logic Gates</span>
-              <span>LED Testing</span>
-              <span>Sensors</span>
-            </div>
-            <div class="showcase-actions">
-              <a href="https://github.com/Devsp1312" target="_blank" class="action-btn primary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-                View Code
-              </a>
-              <a href="#" class="action-btn secondary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                </svg>
-                Demo
-              </a>
+              <span>ESP32-S3</span>
+              <span>KiCad</span>
+              <span>Distil-Whisper</span>
+              <span>Wav2Vec2</span>
+              <span>Python</span>
             </div>
           </div>
           <div class="card-shine"></div>
@@ -222,33 +223,17 @@
               <span class="project-number">02</span>
               <div class="project-status ai">
                 <span class="status-dot"></span>
-                AI/ML
+                Web
               </div>
             </div>
-            <h3 class="showcase-title">Mini-PC AI Chatbot & NAS</h3>
+            <h3 class="showcase-title">Driprate</h3>
             <p class="showcase-description">
-              Configured Ubuntu-based mini-PC as NAS with Samba. Deployed GPT-2 AI chatbot with FastAPI backend and React frontend.
+              A mobile-first React web app for rating and organizing outfits by occasion. Features a dark streetwear aesthetic with an intuitive interface for cataloguing and scoring looks.
             </p>
             <div class="showcase-tech">
-              <span>Ubuntu</span>
-              <span>FastAPI</span>
               <span>React</span>
-              <span>GPT-2</span>
-            </div>
-            <div class="showcase-actions">
-              <a href="https://github.com/Devsp1312" target="_blank" class="action-btn primary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-                View Code
-              </a>
-              <a href="#" class="action-btn secondary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                </svg>
-                Demo
-              </a>
+              <span>Vite</span>
+              <span>Tailwind CSS</span>
             </div>
           </div>
           <div class="card-shine"></div>
@@ -263,33 +248,18 @@
               <span class="project-number">03</span>
               <div class="project-status iot">
                 <span class="status-dot"></span>
-                IoT
+                IoT / AI
               </div>
             </div>
-            <h3 class="showcase-title">IoT Voice-Controlled Assistant</h3>
+            <h3 class="showcase-title">Smart Inventory System</h3>
             <p class="showcase-description">
-              Voice-controlled IoT assistant using Raspberry Pi and Arduino. Integrated smart home devices with Google Assistant.
+              RFID-based inventory tracking with a web dashboard, AI-powered natural language search, and chatbot integration across Web, Telegram, and Discord. Multi-user support with QR tracking and cloud backup on the roadmap.
             </p>
             <div class="showcase-tech">
-              <span>Raspberry Pi</span>
               <span>Arduino</span>
-              <span>Google Assistant</span>
-              <span>Python</span>
-            </div>
-            <div class="showcase-actions">
-              <a href="https://github.com/Devsp1312" target="_blank" class="action-btn primary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-                View Code
-              </a>
-              <a href="#" class="action-btn secondary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                </svg>
-                Demo
-              </a>
+              <span>RFID RC522</span>
+              <span>Node.js</span>
+              <span>SQLite</span>
             </div>
           </div>
           <div class="card-shine"></div>
@@ -304,33 +274,67 @@
               <span class="project-number">04</span>
               <div class="project-status hardware">
                 <span class="status-dot"></span>
+                Full-Stack
+              </div>
+            </div>
+            <h3 class="showcase-title">Rutgers Marketplace</h3>
+            <p class="showcase-description">
+              A full-stack buy &amp; sell platform for Rutgers students. Includes Google Sign-In authentication, wishlists, an admin backend, Google Calendar API integration for meeting scheduling, and a reporting system.
+            </p>
+            <div class="showcase-tech">
+              <span>Full-Stack Web</span>
+              <span>Google OAuth</span>
+              <span>Google Calendar API</span>
+            </div>
+          </div>
+          <div class="card-shine"></div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="showcase-card" data-project="5">
+          <div class="card-glow"></div>
+          <div class="card-border"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <span class="project-number">05</span>
+              <div class="project-status hardware">
+                <span class="status-dot"></span>
                 Hardware
               </div>
             </div>
-            <h3 class="showcase-title">Wireless Energy Monitoring</h3>
+            <h3 class="showcase-title">3D Printing Service Platform</h3>
             <p class="showcase-description">
-              Wireless energy monitoring system using ESP8266 and current sensors. Real-time data visualization via cloud platform.
+              A service platform that accepts custom 3D print requests with an automated cost estimation model. Built as a technical micro-business to streamline order intake and pricing for clients.
             </p>
             <div class="showcase-tech">
-              <span>ESP8266</span>
-              <span>IoT</span>
-              <span>Sensors</span>
-              <span>Cloud</span>
+              <span>Web Development</span>
+              <span>Cost Modeling</span>
+              <span>3D Printing</span>
             </div>
-            <div class="showcase-actions">
-              <a href="https://github.com/Devsp1312" target="_blank" class="action-btn primary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-                View Code
-              </a>
-              <a href="#" class="action-btn secondary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                </svg>
-                Demo
-              </a>
+          </div>
+          <div class="card-shine"></div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="showcase-card" data-project="6">
+          <div class="card-glow"></div>
+          <div class="card-border"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <span class="project-number">06</span>
+              <div class="project-status ai">
+                <span class="status-dot"></span>
+                Academic
+              </div>
+            </div>
+            <h3 class="showcase-title">Talent Development Strategic Plan</h3>
+            <p class="showcase-description">
+              Course project as VP of Talent Development. Created a comprehensive strategic training plan including a training needs assessment, learning frameworks, and evaluation frameworks to support organizational growth.
+            </p>
+            <div class="showcase-tech">
+              <span>Strategic Planning</span>
+              <span>Training Design</span>
+              <span>HRM</span>
             </div>
           </div>
           <div class="card-shine"></div>
@@ -362,7 +366,7 @@
           <h3>Resume Preview</h3>
         </div>
         <div class="resume-viewer-content">
-          <iframe id="resumeFrame" src="Resume__Dev_IT.pdf" frameborder="0" allowfullscreen></iframe>
+          <iframe id="resumeFrame" src="Resume__Dev_IT.pdf" frameborder="0" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
     </div>
