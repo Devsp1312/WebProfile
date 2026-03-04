@@ -1034,6 +1034,19 @@ body {
   margin-bottom: var(--spacing-sm);
 }
 
+.work-company a,
+.work-company a:visited {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.work-company a:hover,
+.work-company a:focus-visible {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 .work-description {
   list-style: none;
   display: flex;
